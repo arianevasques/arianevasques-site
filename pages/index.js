@@ -3,7 +3,9 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div className={styles.homeInfos}>
-      <div className={styles.homeImage}></div>
+      <div className={styles.homeImage}>
+        <img src='./imagem-site.jpeg'/>
+      </div>
       <div className={styles.infos}>
         <div className={styles.avatar}>
           <img className={styles.imagemPerfil} src='https://github.com/arianevasques.png' />
