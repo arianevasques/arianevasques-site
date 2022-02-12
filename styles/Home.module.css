@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 
 .homeInfos {
   display: flex; /*por padrão é flex-direction: row*/
   height: 100vh;
   font-size: 1.4em;
-  font-family: "Amatic SC", cursive;
+  /* font-family: "Amatic SC", cursive; */
+  font-family: "Roboto Condensed", sans-serif;
 }
 @media (max-width: 960px) {
   .homeInfos {
@@ -41,6 +42,7 @@
 @media (max-width: 960px) {
   .infos {
     width: 100%;
+    font-size: 65%;
   }
 }
 
@@ -75,3 +77,4 @@
   display: flex;
   margin: 8px;
 }
+
