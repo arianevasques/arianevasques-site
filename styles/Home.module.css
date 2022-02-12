@@ -1,24 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:wght@400;500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:wght@400;500&display=swap");
 
 .homeInfos {
-  display: flex;
+  display: flex; /*por padrão é flex-direction: row*/
   height: 100vh;
   font-size: 1.4em;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
+}
+@media (max-width: 960px) {
+  .homeInfos {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
-.homeImage{
+.homeIllustration {
   width: 50%;
   background-color: brown;
 }
-.homeImage img{
+@media (max-width: 960px) {
+  .homeIllustration {
+    height: 100px;
+    width: 100%;
+  }
+}
+.homeIllustration img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.infos{
+.infos {
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -26,6 +37,11 @@
   padding: 30px 30px 30px 30px;
   width: 50%;
   overflow: auto;
+}
+@media (max-width: 960px) {
+  .infos {
+    width: 100%;
+  }
 }
 
 .avatar {
@@ -55,7 +71,7 @@
 .socialLinks {
   margin: 28px 0;
 }
-.socialLinks ul li{
+.socialLinks ul li {
   display: flex;
   margin: 8px;
 }
