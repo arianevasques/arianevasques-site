@@ -45,15 +45,15 @@ export default function Home() {
         <div className={styles.socialLinks}>
           <ul>
             <li>
-              <a href="https://www.linkedin.com/in/ariane-vasques-a892a1183/">
+              <a href="https://www.linkedin.com/in/ariane-vasques-a892a1183/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/arianevqs/">Instagram</a>
+              <a href="https://www.instagram.com/arianevqs/"target="_blank" rel="noopener noreferrer">Instagram</a>
             </li>
             <li>
-              <a href="https://github.com/arianevasques/">GitHub</a>
+              <a href="https://github.com/arianevasques/" target="_blank" rel="noopener noreferrer">GitHub</a>
             </li>
           </ul>
         </div>
