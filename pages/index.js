@@ -1,31 +1,34 @@
 import styles from "../styles/Home.module.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-export default function Home() {
-  const [data, setData] = useState([]);
+export default function Home({ data }) {
+  // Debugando: verificando dados que vem do getStaticProps
+  // console.log("data: ", data);
 
-  const getData = async () => {
-    // Promisse
-    const conect = () => {
-      return fetch(
-        `https://arianevasques-api.herokuapp.com/api/home?populate=*`
-      );
-    };
-    // Tenta fazer isso
-    try {
-      const resultado = await conect();
-      const dados = await resultado.json();
-      // console.log(">>> product: ", dados.data);
-      setData(dados.data);
-    } catch (error) {
-      // Se der erro faz isso
-      console.log(">>> Erro: ", error);
-    }
-  };
-  // roda toda vez q o componente renderiza
-  useEffect(() => {
-    getData();
-  }, []);
+  // Requisitando dados da API no lado do Client
+  // const [data, setData] = useState([]);
+  // const getData = async () => {
+  //   // Promisse
+  //   const conect = () => {
+  //     return fetch(
+  //       `https://arianevasques-api.herokuapp.com/api/home?populate=*`
+  //     );
+  //   };
+  //   // Tenta fazer isso
+  //   try {
+  //     const resultado = await conect();
+  //     const dados = await resultado.json();
+  //     // console.log(">>> product: ", dados.data);
+  //     setData(dados.data);
+  //   } catch (error) {
+  //     // Se der erro faz isso
+  //     console.log(">>> Erro: ", error);
+  //   }
+  // };
+  // // roda toda vez q o componente renderiza
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <>
@@ -73,4 +76,18 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+// Requisitando dados da API no lado do Server
+export async function getStaticProps() {
+  const result = await fetch(
+    "https://arianevasques-api.herokuapp.com/api/home?populate=*"
+  );
+  const data = await result.json();
+  return {
+    props: {
+      data: data.data,
+    },
+    revalidate: 10, // In seconds
+  };
 }
